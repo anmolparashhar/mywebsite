@@ -30,9 +30,9 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('login', 'Auth::index');
-$routes->get('register', 'Auth::register');
-$routes->post('create', 'Auth::create');
+// $routes->get('login', 'Auth::index');
+// $routes->get('register', 'Auth::register');
+// $routes->post('create', 'Auth::create');
 $routes->get('blog', 'Blog::index');
 $routes->get('data', 'Data::index');
 $routes->get('test', 'Test::index');
@@ -51,6 +51,11 @@ $routes->get('testmail/verify', 'TestMail::verify');
 $routes->get('testhelpers', 'TestHelpers::index');
 $routes->get('formvalidation', 'FormValidation::index');
 $routes->post('formvalidation', 'FormValidation::index');
+$routes->get('register', 'Register::index');
+$routes->post('register', 'Register::index');
+$routes->get('register/activate', 'Register::activate');
+$routes->get('register/activate/(:any)', 'Register::activate/$1');
+$routes->get('login', 'Login::index');
 
 $routes->set404Override (function()
 {

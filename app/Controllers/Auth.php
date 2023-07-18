@@ -10,15 +10,15 @@ class Auth extends BaseController
     protected $helpers = ['url', 'form', 'Form_helper'];
 
 
-    public function index()
-    {
-        return view ('auth/login');
-    }
+    // public function index()
+    // {
+    //     return view ('auth/login');
+    // }
 
-    public function register()
-    {
-        return view ('auth/register');
-    }
+    // public function register()
+    // {
+    //     return view ('auth/register');
+    // }
     
     public function create()
     {
