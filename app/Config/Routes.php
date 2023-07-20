@@ -56,6 +56,10 @@ $routes->post('register', 'Register::index');
 $routes->get('register/activate', 'Register::activate');
 $routes->get('register/activate/(:any)', 'Register::activate/$1');
 $routes->get('login', 'Login::index');
+$routes->post('login', 'Login::index');
+$routes->get('dashboard', 'Dashboard::index');
+$routes->get('logout', 'Dashboard::logout');
+$routes->get('login_activity', 'Dashboard::loginActivity');
 
 $routes->set404Override (function()
 {

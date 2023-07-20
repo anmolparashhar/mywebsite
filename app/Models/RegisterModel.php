@@ -24,7 +24,7 @@ class RegisterModel extends Model
         $builder->select('activation_date,uniid,status');
         $builder->where('uniid', $id);
         $result = $builder->get();
-        if($builder->countAll()==1)
+        if(count($result->getResultArray())==1)
         {
             return $result->getRow();
         }

@@ -45,13 +45,35 @@
                         <li class="nav-item">
                             <a class="nav-link" href="<?= base_url()?>contact">Contact</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url()?>register">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url()?>login">Login</a>
-                        </li>
-                        
+                        <?php if(session()->has("logged_user")): ?>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <?= $this->renderSection('page_title'); ?>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="<?= base_url()?>dashboard">Dashboard</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="">Edit Profile</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="">upload Avatar</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="">Change Password</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="<?= base_url()?>login_activity">Login Activity</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="<?= base_url()?>logout">Logout</a>
+                                    <!-- <div class="dropdown-divider"></div> -->
+                                    <!-- <a class="dropdown-item" href="fullwidth.html">Programming</a> -->
+                                </div>
+                            </li>
+                        <?php else: ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= base_url()?>register">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= base_url()?>login">Login</a>
+                            </li>
+                        <?php endif; ?>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
